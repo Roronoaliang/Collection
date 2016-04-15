@@ -12,6 +12,11 @@ import java.util.Vector;
  *              方法返回Enumeration对象遍历
  * 
  *              3.不考虑线程安全的情况下使用ArrayList，需要考虑线程安全的情况下使用CopyOnWriteArrayList
+ * 
+ *              如果使用一个或多个读取器以及一个或多个编写器，则同步包装不提供线程安全的访问。java.util 包中的集合类都返回
+ *              fail-fast 迭代器，这意味着它们假设线程在集合内容中进行迭代时，集合不会更改它的内容,
+ *              这里的线程安全指多个线程同时往线程安全的集合对象写入数据时能保证同步
+ * 
  * @Date 2016年3月30日 下午2:08:00
  */
 public class AccessVector {

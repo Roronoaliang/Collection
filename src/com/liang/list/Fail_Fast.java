@@ -8,11 +8,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @Description 
- *              fail-fast机制是一种集合类的错误检测机制,直白的说就是当出现遍历和修改操作同时进行时能快速的报错，比如当多个线程对同一个集合进行操作时，如果有线程对该集合进行添加或删除元素的操作
- *              , 那么其他线程在访问该集合时就会抛出ConcurrentModificationException异常,产生fail-
+ *              fail-fast机制是一种集合类的错误检测机制,直白的说就是当出现遍历和修改操作同时进行时能快速的报错，比如当多个线程对同一个集合进行操作时
+ *              ，如果有线程对该集合进行添加或删除元素的操作 ,
+ *              那么其他线程在访问该集合时就会抛出ConcurrentModificationException异常,产生fail-
  *              fast事件; 或者当使用Iterator遍历集合时对该集合进行添加或删除也会发生fail-fast事件。
  *              所以如果在多线程环境下使用fail-fast机制的集合，建议使用java.util.
  *              concurrent包下的线程安全类去取代java .util包下的类。
+ * 
+ *              fail-fast与是否线程安全无直接关系
  * 
  * @Theory AbstractList中定义了一个modCount和expectedModCount属性，都表示该集合对象元素个数修改的次数，
  *         只要涉及到修改集合中的元素个数时,都会改变他们的值,在使用迭代器遍历的时候需要判断他们是否相等，

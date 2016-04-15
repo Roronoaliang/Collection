@@ -52,6 +52,10 @@ public class AccessHashMap {
 				+ (System.currentTimeMillis() - begin));
 	}
 
+	/**
+	 * 只遍历value集合
+	 * @param map
+	 */
 	public static void accessWithValues(Map<Integer, Object> map) {
 		long begin = System.currentTimeMillis();
 		Iterator<Object> it = map.values().iterator();
